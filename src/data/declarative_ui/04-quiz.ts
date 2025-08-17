@@ -20,7 +20,7 @@ export const quizSection: SlideSection = {
         '問題：以下の同じ機能を持つ2つのReactコンポーネントについて、どちらがより宣言的と言えるか？',
         'カウンターの値が変わるとlocalStorageに保存し、値が閾値に達すると特別なメッセージを表示する',
       ],
-      codeExamples: [
+  codeExamples: [
         {
           title: 'コードA',
           language: 'jsx',
@@ -59,7 +59,9 @@ export const quizSection: SlideSection = {
     setCount(prevCount => prevCount + 1);
   };`,
         },
-      ],
+  ],
+  // テスト用に横並びレイアウトを指定
+  codeLayout: 'horizontal',
     },
     {
       id: '04-quiz-react-answer',

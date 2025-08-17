@@ -3,7 +3,7 @@
 import { useParams } from 'next/navigation';
 import { useMemo, useRef, useState } from 'react';
 import { Index } from '@/components/animations/background/Index';
-import { SlideTransition } from '@/components/animations/slide-transition/SlideTransition';
+import { SlideTransition } from '@/components/animations/SlideTransition';
 import { SlideComponent } from '@/components/SlideComponent';
 import { useAsyncData } from '@/hooks/useAsyncData';
 import { useSlidePresentation } from '@/hooks/useSlidePresentation';
@@ -74,20 +74,20 @@ export default function SlidePage() {
       />
 
       <SlideTransition slideId={currentSlide.id} animations={currentSlide.slideAnimations}>
-        <SlideComponent slide={currentSlide}>
-          <div className={styles.slideNavigation}>
-            <button type="button" className={styles.navButton} onClick={goPrev}>
-              ←
-            </button>
-            <span className={styles.slideCounter}>
-              {currentIndex + 1} / {currentSection.slides.length}
-            </span>
-            <button type="button" className={styles.navButton} onClick={goNext}>
-              →
-            </button>
-          </div>
-        </SlideComponent>
+        <SlideComponent slide={currentSlide} />
       </SlideTransition>
+
+      <div className={styles.slideNavigation}>
+        <button type="button" className={styles.navButton} onClick={goPrev}>
+          ←
+        </button>
+        <span className={styles.slideCounter}>
+          {currentIndex + 1} / {currentSection.slides.length}
+        </span>
+        <button type="button" className={styles.navButton} onClick={goNext}>
+          →
+        </button>
+      </div>
     </div>
   );
 }

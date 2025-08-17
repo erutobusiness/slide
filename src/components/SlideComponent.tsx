@@ -50,9 +50,17 @@ export function SlideComponent({ slide, children }: SlideComponentProps) {
         )}
 
         {slide.codeExamples && slide.codeExamples.length > 0 && (
-          <div className={styles.codeExamples}>
+          <div
+            className={`${styles.codeExamples} ${
+              slide.codeLayout === 'horizontal' ? styles.codeExamplesHorizontal : ''
+            }`}
+            data-layout={slide.codeLayout ?? 'vertical'}
+          >
             {slide.codeExamples.map((code, index) => (
-              <div key={`${slide.id}-code-${code.title}-${index}`} className={styles.codeBlock}>
+              <div
+                key={`${slide.id}-code-${code.title}-${index}`}
+                className={styles.codeBlock}
+              >
                 {code.title && <h3 className={styles.codeTitle}>{code.title}</h3>}
                 {code.filename && <p className={styles.filename}>{code.filename}</p>}
 
@@ -73,7 +81,7 @@ export function SlideComponent({ slide, children }: SlideComponentProps) {
                             .join('')
                             .slice(0, 12)}`;
                           return (
-                            <div key={lineKey} {...getLineProps({ line, key: lineKey })}>
+                            <div key={`${lineKey}-${line}`} {...getLineProps({ line, key: lineKey })}>
                               {line.map((token: Token, j: number) => {
                                 const tokenKey = `${lineKey}-${j}-${String(token.content).slice(0, 8)}`;
                                 return (

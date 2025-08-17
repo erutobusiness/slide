@@ -51,6 +51,16 @@
   gap: 1.5rem;
 }
 
+.codeExamplesHorizontal {
+  flex-direction: row;
+  align-items: stretch;
+}
+
+.codeExamplesHorizontal .codeBlock {
+  flex: 1 1 0;
+  min-width: 0; /* allow overflow hidden children to shrink */
+}
+
 .codeBlock {
   background-color: #1a1a1a;
   border-radius: 0.5rem;

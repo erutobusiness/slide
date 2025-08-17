@@ -81,6 +81,7 @@ function setupCounter() {
 }`,
         },
       ],
+      codeLayout: 'horizontal',
     },
     {
       id: '01-intro-merits',

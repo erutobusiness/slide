@@ -43,6 +43,8 @@ export interface Slide {
   descriptions?: string[];
   image?: SlideImage;
   codeExamples?: SlideCode[];
+  /** Layout for multiple code examples: 'vertical' (stacked) or 'horizontal' (side-by-side) */
+  codeLayout?: 'vertical' | 'horizontal';
   // grouped list / bullet groups (used by quiz and explanation slides)
   list?: SlideList;
   slideAnimations?: SlideAnimations;
