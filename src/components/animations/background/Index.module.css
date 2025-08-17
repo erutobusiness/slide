@@ -1,0 +1,210 @@
+.backgroundAnimationContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+/* Wave Background Animation */
+.waveBackground {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.liquid {
+  background-color: transparent;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.wave {
+  content: "";
+  width: 200%;
+  height: 150%;
+  background: linear-gradient(
+    45deg,
+    var(--slide-gradient-from),
+    var(--slide-gradient-to)
+  );
+  position: absolute;
+  left: -50%;
+  bottom: -145%;
+  border-radius: 45%;
+  opacity: 0;
+  animation: waveAppear 0.9s ease-out forwards;
+}
+
+.wave2 {
+  content: "";
+  width: 200%;
+  height: 150%;
+  background: linear-gradient(
+    -45deg,
+    var(--slide-gradient-to),
+    var(--slide-gradient-from)
+  );
+  position: absolute;
+  left: -50%;
+  bottom: -140%;
+  border-radius: 40%;
+  opacity: 0;
+  animation: waveAppear 0.9s ease-out 0.1s forwards;
+}
+
+/* Heart Background Animation */
+.heartBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.heartContainer {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.heart {
+  width: 100px;
+  height: 90px;
+  background: var(--slide-gradient-from);
+  position: relative;
+  transform: rotate(-45deg);
+  animation: heartBeat 1.5s ease-in-out infinite;
+  opacity: 0.4;
+}
+
+.heart::before,
+.heart::after {
+  content: '';
+  width: 52px;
+  height: 80px;
+  background: var(--slide-gradient-from);
+  border-radius: 52px 52px 0 0;
+  position: absolute;
+}
+
+.heart::before {
+  left: 50px;
+  transform: rotate(-45deg);
+  transform-origin: 0 100%;
+}
+
+.heart::after {
+  left: 0;
+  transform: rotate(45deg);
+  transform-origin: 100% 100%;
+}
+
+/* Boom Background Animation */
+.boomBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.boomContainer {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.boomCircle {
+  width: 50px;
+  height: 50px;
+  background: radial-gradient(circle, var(--slide-gradient-from), var(--slide-gradient-to));
+  border-radius: 50%;
+  animation: boomExplosion 2s ease-out infinite;
+  opacity: 0.5;
+}
+
+.fromRight .wave {
+  animation: waveAppear 0.9s ease-out forwards, animateRight 8s linear infinite;
+}
+
+.fromRight .wave2 {
+  animation: waveAppear 0.9s ease-out 0.1s forwards, animateRight 10s linear infinite;
+}
+
+.fromLeft .wave {
+  animation: waveAppear 0.9s ease-out forwards, animateLeft 8s linear infinite;
+}
+
+.fromLeft .wave2 {
+  animation: waveAppear 0.9s ease-out 0.1s forwards, animateLeft 10s linear infinite;
+}
+
+/* Keyframes */
+@keyframes waveAppear {
+  0% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes animateRight {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes animateLeft {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+
+@keyframes heartBeat {
+  0%, 100% {
+    transform: rotate(-45deg) scale(1);
+  }
+  50% {
+    transform: rotate(-45deg) scale(1.1);
+  }
+}
+
+@keyframes boomExplosion {
+  0% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(3);
+    opacity: 0.3;
+  }
+  100% {
+    transform: scale(5);
+    opacity: 0;
+  }
+}

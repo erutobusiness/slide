@@ -1,0 +1,68 @@
+.container {
+  min-height: 100vh;
+  padding: 2rem;
+  background: var(--slide-background);
+  color: var(--slide-foreground);
+}
+
+.main {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.title {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: var(--slide-primary);
+}
+
+.description {
+  font-size: 1.2rem;
+  margin-bottom: 3rem;
+  color: var(--slide-secondary);
+}
+
+.sectionGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.sectionCard {
+  padding: 1.5rem;
+  border: 2px solid var(--slide-primary);
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.sectionCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  background: var(--slide-primary);
+  color: var(--slide-background);
+}
+
+.sectionCard h2 {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.backLink {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background: var(--slide-primary);
+  color: var(--slide-background);
+  border-radius: 0.25rem;
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+}
+
+.backLink:hover {
+  opacity: 0.8;
+}
