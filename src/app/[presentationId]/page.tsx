@@ -1,26 +1,8 @@
 import Link from 'next/link';
 import styles from './presentation.module.css';
 
-const presentationData = {
-  declarative_ui: {
-    title: 'Declarative UI',
-    description: 'モダンなUIフレームワークにおける宣言的UI設計について',
-    sections: [
-      { id: '01_intro', title: 'イントロダクション' },
-      { id: '02_concept', title: 'コンセプト' },
-      { id: '03_implementation', title: '実装' },
-    ],
-  },
-  theArtOfLoving: {
-    title: 'The Art of Loving',
-    description: '愛の技術に関するプレゼンテーション',
-    sections: [
-      { id: '01_intro', title: 'はじめに' },
-      { id: '02_theory', title: '理論' },
-      { id: '03_practice', title: '実践' },
-    ],
-  },
-};
+// presentation metadata is provided from `src/data/<presentationId>/index.ts`
+// do not define presentation data inline here; the page will dynamically import it.
 
 export default async function PresentationPage({
   params,
@@ -28,9 +10,39 @@ export default async function PresentationPage({
   params: Promise<{ presentationId: string }>;
 }) {
   const { presentationId } = await params;
-  const presentation = presentationData[presentationId as keyof typeof presentationData];
 
-  if (!presentation) {
+  // try to dynamically import data module for the presentation (e.g. src/data/declarative_ui/index.ts)
+  let presentation:
+    | { title: string; description: string; sections: { id: string; title: string }[] }
+    | undefined;
+  try {
+    const mod = await import(`@/data/${presentationId}`);
+
+    // prefer exported accessor `getSlidesPageData` or `slidesPageData` for title/description
+    const pageInfo =
+      typeof mod.getSlidesPageData === 'function'
+        ? mod.getSlidesPageData()
+        : mod.slidesPageData || {};
+
+    const sectionsFromData: { id: string; title: string }[] = Array.isArray(mod.slideSections)
+      ? (mod.slideSections as Array<{ id: string; title: string }>).map((s) => ({
+          id: s.id,
+          title: s.title,
+        }))
+      : [];
+
+    if (!pageInfo.title && !sectionsFromData.length) {
+      // module exists but doesn't export expected data
+      throw new Error('invalid presentation module');
+    }
+
+    presentation = {
+      title: pageInfo.title ?? 'Presentation',
+      description: pageInfo.description ?? '',
+      sections: sectionsFromData,
+    };
+  } catch (_) {
+    // if dynamic import fails or module doesn't match expected shape, show not found
     return <div>プレゼンテーションが見つかりません</div>;
   }
 

@@ -1,6 +1,4 @@
-import type { SlideSection } from '@/types/slides';
-
-export const quizSection: SlideSection = {
+export const quizSection = {
   id: '04-quiz',
   title: '宣言的クイズ',
   description: '宣言的・命令的の違いをクイズで学ぶ',

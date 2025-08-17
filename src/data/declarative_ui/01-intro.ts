@@ -1,6 +1,5 @@
-import type { SlideSection } from '@/types/slides';
+import type { SlideSection } from '@/types/slide';
 
-// イントロダクションセクションのスライドデータ
 export const introSection: SlideSection = {
   id: '01-intro',
   title: '宣言的UIとは？',
@@ -16,6 +15,7 @@ export const introSection: SlideSection = {
       ],
       image: {
         url: '/declarative/宣言的UI.png',
+        alt: '「宣言的UI」の概念を示す図（日本語の見出し付き）',
         position: 'bottom',
       },
     },
@@ -28,6 +28,7 @@ export const introSection: SlideSection = {
       ],
       image: {
         url: '/declarative/DeclartiveVsImperative.png',
+        alt: '宣言的と命令的プログラミングの対比を示す図（車の比喩）',
         position: 'bottom',
       },
     },
@@ -40,7 +41,7 @@ export const introSection: SlideSection = {
       codeExamples: [
         {
           title: '命令的UI（JavaScript DOM）',
-          language: 'js',
+          language: 'javascript',
           descriptions: [
             'DOM要素を直接操作して内容を変更',
             '状態（count変数）の更新とDOMの更新を明示的に記述',
@@ -113,3 +114,5 @@ function setupCounter() {
     },
   ],
 };
+
+export default introSection;

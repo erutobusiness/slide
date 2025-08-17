@@ -1,6 +1,4 @@
-import type { SlideSection } from '@/types/slides';
-
-export const humanitiesSection: SlideSection = {
+export const humanitiesSection = {
   id: '90-humanities',
   title: '人文科学の視点から見る宣言的プログラミング',
   description: '宣言的プログラミングと人間の認知、言語、文化の関連性を探求',
@@ -61,10 +59,10 @@ export const humanitiesSection: SlideSection = {
         Reactコンポーネントなどの宣言的コードは、状態とUIの関係を「宣言」するだけで、
         複雑なDOM操作という実際の変更を背後で実行し、新しいデジタル現実を生成する`,
       ],
-      codeExample: {
+      codeExamples: [{
         language: 'jsx',
         code: '// Reactの宣言的UI - この「宣言」自体がUIを生成する行為となる\nfunction WelcomeMessage({ username }) {\n  return <h1>ようこそ、{username}さん！</h1>;\n}',
-      },
+      }],
     },
     {
       id: 'humanities-cultural-context',

@@ -1,8 +1,20 @@
 'use client';
 
 import Image from 'next/image';
+import type { Language } from 'prism-react-renderer';
+import Highlight, { defaultProps } from 'prism-react-renderer';
 import type { Slide } from '@/types/slide';
 import styles from './SlideComponent.module.css';
+
+type Token = { types: string[]; content: string };
+type RenderPropsLocal = {
+  className?: string;
+  tokens: Token[][];
+  getLineProps: (options: { line: Token[]; key: string }) => Record<string, unknown>;
+  getTokenProps: (options: { token: Token; key: string }) => Record<string, unknown>;
+};
+
+import theme from 'prism-react-renderer/themes/nightOwl';
 
 interface SlideComponentProps {
   slide: Slide;
@@ -41,11 +53,43 @@ export function SlideComponent({ slide, children }: SlideComponentProps) {
           <div className={styles.codeExamples}>
             {slide.codeExamples.map((code, index) => (
               <div key={`${slide.id}-code-${code.title}-${index}`} className={styles.codeBlock}>
-                <h3 className={styles.codeTitle}>{code.title}</h3>
+                {code.title && <h3 className={styles.codeTitle}>{code.title}</h3>}
                 {code.filename && <p className={styles.filename}>{code.filename}</p>}
-                <pre className={styles.codeContent}>
-                  <code>{code.code}</code>
-                </pre>
+
+                {/* Prism-based syntax highlighting */}
+                <Highlight
+                  {...defaultProps}
+                  theme={theme}
+                  code={String(code.code)}
+                  language={(code.language || 'javascript') as Language}
+                >
+                  {(renderProps: RenderPropsLocal) => {
+                    const { className, tokens, getLineProps, getTokenProps } = renderProps;
+                    return (
+                      <pre className={`${styles.codeContent} ${className ?? ''}`}>
+                        {tokens.map((line: Token[], i: number) => {
+                          const lineKey = `${i}-${line
+                            .map((t) => String(t.content))
+                            .join('')
+                            .slice(0, 12)}`;
+                          return (
+                            <div key={lineKey} {...getLineProps({ line, key: lineKey })}>
+                              {line.map((token: Token, j: number) => {
+                                const tokenKey = `${lineKey}-${j}-${String(token.content).slice(0, 8)}`;
+                                return (
+                                  <span
+                                    key={tokenKey}
+                                    {...getTokenProps({ token, key: tokenKey })}
+                                  />
+                                );
+                              })}
+                            </div>
+                          );
+                        })}
+                      </pre>
+                    );
+                  }}
+                </Highlight>
               </div>
             ))}
           </div>

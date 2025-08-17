@@ -1,7 +1,7 @@
-import type { SlideSection } from '@/types/slides';
+import type { SlideSection } from '@/types/slide';
 
 // 宣言的UIのこぼれ話（お便り形式）セクションのスライドデータ
-export const letterSection: SlideSection = {
+export const letterSection = {
   id: '05-letter',
   title: '宣言的UIのこぼれ話（お便り形式）',
   description: '宣言的UIに関するよくある質問や誤解について解説',
@@ -41,7 +41,7 @@ export const letterSection: SlideSection = {
         '・それぞれのフレームワークは独自のアプローチで宣言的UIを実現している',
         '・宣言的UIはアプローチ・思想であり、特定の実装ではない',
       ],
-      codeExample: {
+      codeExamples: [{
         language: 'html',
         code: `<!-- Vue.jsの宣言的UI例 -->
 <template>
@@ -65,7 +65,7 @@ export default {
   }
 }
 </script>`,
-      },
+  }],
     },
   ],
 };

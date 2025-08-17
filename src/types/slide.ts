@@ -6,10 +6,20 @@ export interface SlideImage {
 }
 
 export interface SlideCode {
-  title: string;
+  title?: string;
+  descriptions?: string[];
   filename?: string;
-  language: 'typescript' | 'javascript' | 'css' | 'html' | 'json';
+  language: string;
   code: string;
+}
+
+export interface ListGroup {
+  title?: string;
+  points: string[];
+}
+
+export interface SlideList {
+  groups: ListGroup[];
 }
 
 export interface SlideAnimations {
@@ -33,8 +43,12 @@ export interface Slide {
   descriptions?: string[];
   image?: SlideImage;
   codeExamples?: SlideCode[];
+  // grouped list / bullet groups (used by quiz and explanation slides)
+  list?: SlideList;
   slideAnimations?: SlideAnimations;
   backgroundAnimation?: BackgroundAnimation;
+  // arbitrary metadata to allow gradual schema additions without breaking
+  meta?: Record<string, unknown>;
 }
 
 export interface SlideSection {

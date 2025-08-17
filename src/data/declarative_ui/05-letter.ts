@@ -1,0 +1,42 @@
+import type { SlideSection } from '@/types/slide';
+
+export const letterSection: SlideSection = {
+  id: '05-letter',
+  title: '宣言的UIのこぼれ話（お便り形式）',
+  description: '宣言的UIに関するよくある疑問や誤解について解説',
+  slides: [
+    {
+      id: '05-letter-1',
+      title: 'お便り1：宣言的UIはパフォーマンスが悪い？',
+      descriptions: [
+        '疑問：「宣言的UIは内部で多くの処理が行われるため、命令的UIより遅いのでは？」',
+        '回答：',
+        '・確かに初期のフレームワークではオーバーヘッドがあった',
+        '・しかし現代のフレームワークは差分検知アルゴリズムやコンパイラ最適化で高速化されている',
+        '・命令的に最適化された手書きコードより遅いケースもあるが、保守性や可読性の向上を考慮すれば総合的なコストは低下することが多い',
+      ],
+    },
+    {
+      id: '05-letter-2',
+      title: 'お便り2：宣言的UIは学習コストが高い？',
+      descriptions: [
+        '疑問：「新しい概念や抽象化が多く、習得が難しいのでは？」',
+        '回答：',
+        '・確かに最初の学習曲線は存在する',
+        '・しかし「状態に基づいてUIが決まる」という単純な概念を理解すれば、異なるフレームワーク間の知識移転は容易',
+      ],
+    },
+    {
+      id: '05-letter-3',
+      title: 'お便り3：宣言的UIとReactは同じもの？',
+      descriptions: [
+        '疑問：「宣言的UIってReactのことなの？」',
+        '回答：',
+        '・Reactは宣言的UIを代表する実装の1つだが、同じではない',
+        '・Vue, Svelte, SwiftUI, Flutter, Compose なども宣言的UIのフレームワークであり、それぞれ独自のアプローチを持つ',
+      ],
+    },
+  ],
+};
+
+export default letterSection;

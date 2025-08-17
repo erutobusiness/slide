@@ -9,11 +9,11 @@ interface AppearAnimationProps {
   duration?: number;
 }
 
-export function AppearAnimation({ 
-  children, 
-  type = 'fade-in', 
-  delay = 0, 
-  duration = 0.5 
+export function AppearAnimation({
+  children,
+  type = 'fade-in',
+  delay = 0,
+  duration = 0.5,
 }: AppearAnimationProps) {
   const variants = getAnimationVariants(type);
 
@@ -24,7 +24,7 @@ export function AppearAnimation({
       transition={{
         duration,
         delay: delay / 1000,
-        ease: 'easeOut'
+        ease: 'easeOut',
       }}
     >
       {children}
@@ -37,33 +37,33 @@ function getAnimationVariants(type: string) {
     case 'fade-in-up':
       return {
         initial: { opacity: 0, y: 20 },
-        animate: { opacity: 1, y: 0 }
+        animate: { opacity: 1, y: 0 },
       };
     case 'fade-in-down':
       return {
         initial: { opacity: 0, y: -20 },
-        animate: { opacity: 1, y: 0 }
+        animate: { opacity: 1, y: 0 },
       };
     case 'slide-in-left':
       return {
         initial: { opacity: 0, x: -50 },
-        animate: { opacity: 1, x: 0 }
+        animate: { opacity: 1, x: 0 },
       };
     case 'slide-in-right':
       return {
         initial: { opacity: 0, x: 50 },
-        animate: { opacity: 1, x: 0 }
+        animate: { opacity: 1, x: 0 },
       };
     case 'zoom-in':
       return {
         initial: { opacity: 0, scale: 0.9 },
-        animate: { opacity: 1, scale: 1 }
+        animate: { opacity: 1, scale: 1 },
       };
     // case 'fade-in':
     default:
       return {
         initial: { opacity: 0 },
-        animate: { opacity: 1 }
+        animate: { opacity: 1 },
       };
   }
 }

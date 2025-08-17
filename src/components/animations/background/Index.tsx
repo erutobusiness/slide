@@ -24,18 +24,18 @@ export function Index({ animation, animationId, direction = 'right', onComplete 
   return (
     <div className={styles.backgroundAnimationContainer}>
       <AnimatePresence>
-          <motion.div
-            key={`${animation.type}-${animationId}`}
-            className={`${styles.waveBackground} ${styles[`from${direction.charAt(0).toUpperCase() + direction.slice(1)}`]}`}
-            initial={{ opacity: 1 }}
-            animate={{ opacity: 1 }}
-            onAnimationComplete={handleAnimationComplete}
-          >
-            <div className={styles.liquid}>
-              <div className={styles.wave} />
-              <div className={styles.wave2} />
-            </div>
-          </motion.div>
+        <motion.div
+          key={`${animation.type}-${animationId}`}
+          className={`${styles.waveBackground} ${styles[`from${direction.charAt(0).toUpperCase() + direction.slice(1)}`]}`}
+          initial={{ opacity: 1 }}
+          animate={{ opacity: 1 }}
+          onAnimationComplete={handleAnimationComplete}
+        >
+          <div className={styles.liquid}>
+            <div className={styles.wave} />
+            <div className={styles.wave2} />
+          </div>
+        </motion.div>
       </AnimatePresence>
     </div>
   );

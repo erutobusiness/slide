@@ -1,7 +1,5 @@
-import type { SlideSection } from '@/types/slides';
-
 // まとめセクションのスライドデータ
-export const summarySection: SlideSection = {
+export const summarySection = {
   id: '06-summary',
   title: 'まとめ',
   description: '宣言的UIのコンセプトと重要ポイントの復習',
@@ -35,7 +33,7 @@ export const summarySection: SlideSection = {
         '・状態管理ライブラリ（Redux、Vuex、Recoilなど）について学ぶ',
         '・サーバーコンポーネントなど最新の宣言的UIトレンドを追う',
       ],
-      codeExample: {
+      codeExamples: [{
         language: 'jsx',
         code: `// 宣言的UIの基本形
 function App() {
@@ -45,7 +43,7 @@ function App() {
     <UI based on state />
   );
 }`,
-      },
+      }],
     },
   ],
 };

@@ -10,11 +10,7 @@ interface WaveProps {
   onComplete?: (id: string) => void;
 }
 
-export function Wave({
-  animationId,
-  direction = 'right',
-  onComplete,
-}: WaveProps) {
+export function Wave({ animationId, direction = 'right', onComplete }: WaveProps) {
   const handleAnimationComplete = useCallback(() => {
     if (animationId && onComplete) {
       setTimeout(() => onComplete(animationId), 900);

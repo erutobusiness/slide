@@ -1,6 +1,4 @@
-import type { SlideSection } from '@/types/slides';
-
-export const whyNowSection: SlideSection = {
+export const whyNowSection = {
   id: '02-why_now',
   title: 'なぜいま「宣言的」の話をするのか',
   description: '宣言的アプローチがなぜ現代の開発に適しているのかを解説',
@@ -26,7 +24,7 @@ export const whyNowSection: SlideSection = {
       id: '02-why-1-1',
       title: 'チーム開発での共通言語になるから: 知らないと……',
       descriptions: ['アンチパターンを産みやすい'],
-      codeExample: {
+  codeExamples: [{
         language: 'jsx',
         code: `function ToggleButton() {
   const handleClick = () => {
@@ -45,13 +43,13 @@ export const whyNowSection: SlideSection = {
     </>
   );
 }`,
-      },
+      }],
     },
     {
       id: '02-why-1-2',
       title: 'チーム開発での共通言語になるから: 問題点',
       descriptions: ['Reactを使っているのに、命令的なコードになっている'],
-      codeExample: {
+  codeExamples: [{
         language: 'jsx',
         code: `function ToggleButton() {
   const handleClick = () => {
@@ -70,13 +68,13 @@ export const whyNowSection: SlideSection = {
         ...
   );
 }`,
-      },
+      }],
     },
     {
       id: '02-why-1-3',
       title: 'チーム開発での共通言語になるから: 解決策',
       descriptions: ['ベストプラクティスに従い、宣言的にする'],
-      codeExample: {
+  codeExamples: [{
         language: 'jsx',
         code: `import { useState } from "react";
 
@@ -97,7 +95,7 @@ function ToggleComponent() {
     </>
   );
 }`,
-      },
+      }],
     },
     {
       id: '02-why-2',
@@ -145,6 +143,7 @@ END-PERFORM.`,
       ],
       image: {
         url: '/declarative/PXL_20250426_075656039.PORTRAIT.ORIGINAL.jpg',
+  alt: 'スマートフォンで撮影された縦向きの写真（宣言的UIに関するスライド用）',
         position: 'bottom',
       },
     },

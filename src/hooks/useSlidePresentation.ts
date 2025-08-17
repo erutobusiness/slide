@@ -21,22 +21,19 @@ function useKeyboardNav(onNext: () => void, onPrev: () => void) {
   }, [onNext, onPrev]);
 }
 
-export function useSlidePresentation(slides: Slide[], onSlideChange?: (direction: 'next' | 'prev') => void) {
+export function useSlidePresentation(
+  slides: Slide[],
+  onSlideChange?: (direction: 'next' | 'prev') => void,
+) {
   const { currentIndex, setCurrentIndex } = useSlideState();
-  const goNext = useCallback(
-    () => {
-      setCurrentIndex(calculateNextSlide(currentIndex, slides.length));
-      onSlideChange?.('next');
-    },
-    [currentIndex, slides.length, setCurrentIndex, onSlideChange],
-  );
-  const goPrev = useCallback(
-    () => {
-      setCurrentIndex(Math.max(currentIndex - 1, 0));
-      onSlideChange?.('prev');
-    },
-    [currentIndex, setCurrentIndex, onSlideChange],
-  );
+  const goNext = useCallback(() => {
+    setCurrentIndex(calculateNextSlide(currentIndex, slides.length));
+    onSlideChange?.('next');
+  }, [currentIndex, slides.length, setCurrentIndex, onSlideChange]);
+  const goPrev = useCallback(() => {
+    setCurrentIndex(Math.max(currentIndex - 1, 0));
+    onSlideChange?.('prev');
+  }, [currentIndex, setCurrentIndex, onSlideChange]);
 
   useKeyboardNav(goNext, goPrev);
 

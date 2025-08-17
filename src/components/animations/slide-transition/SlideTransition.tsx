@@ -13,11 +13,11 @@ export function SlideTransition({ children, slideId, animations }: SlideTransiti
   const getTransitionVariants = () => {
     const inType = animations?.in?.type || 'fade';
     const outType = animations?.out?.type || 'fade';
-    
+
     return {
       initial: getInitialVariant(inType),
       animate: { opacity: 1, x: 0, y: 0, scale: 1 },
-      exit: getExitVariant(outType)
+      exit: getExitVariant(outType),
     };
   };
 
@@ -32,7 +32,7 @@ export function SlideTransition({ children, slideId, animations }: SlideTransiti
         exit={variants.exit}
         transition={{
           duration: animations?.in?.duration ? animations.in.duration / 1000 : 0.5,
-          ease: 'easeInOut'
+          ease: 'easeInOut',
         }}
       >
         {children}
@@ -47,7 +47,7 @@ function getInitialVariant(type: string) {
       return { opacity: 0, x: 100 };
     case 'zoom':
       return { opacity: 0, scale: 0.8 };
-    case 'fade':
+    // case 'fade':
     default:
       return { opacity: 0 };
   }
@@ -59,7 +59,7 @@ function getExitVariant(type: string) {
       return { opacity: 0, x: -100 };
     case 'zoom':
       return { opacity: 0, scale: 1.2 };
-    case 'fade':
+    // case 'fade':
     default:
       return { opacity: 0 };
   }

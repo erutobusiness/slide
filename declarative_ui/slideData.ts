@@ -1,5 +1,3 @@
-import type { SlideSection } from '@/types/slides';
-
 // 各セクションのインポート
 import { introSection } from './01-intro';
 import { whyNowSection } from './02-why_now';
@@ -10,7 +8,7 @@ import { summarySection } from './06-summary';
 import { humanitiesSection } from './90-humanities';
 
 // すべてのスライドセクションの配列
-export const slideSections: SlideSection[] = [
+export const slideSections = [
   introSection,
   whyNowSection,
   historySection,
@@ -21,12 +19,12 @@ export const slideSections: SlideSection[] = [
 ];
 
 // 特定のスライドセクションを取得する関数
-export function getSlideSection(id: string): SlideSection | undefined {
+export function getSlideSection(id: string) {
   return slideSections.find((section) => section.id === id);
 }
 
 // すべてのスライドセクションを取得する関数
-export function getAllSlideSections(): SlideSection[] {
+export function getAllSlideSections() {
   return slideSections;
 }
 

@@ -1,7 +1,5 @@
-import type { SlideSection } from '@/types/slides';
-
 // 宣言的・宣言的UIの歴史セクションのスライドデータ
-export const historySection: SlideSection = {
+export const historySection = {
   id: '03-history',
   title: '宣言的・宣言的UIの歴史：コードの革命物語',
   description: '「どうやって」から「何を」へ —— 宣言的プログラミングが世界を変えた物語',
@@ -172,6 +170,7 @@ export const historySection: SlideSection = {
       ],
       image: {
         url: '/declarative/PXL_20250430_135602763.PORTRAIT.ORIGINAL.jpg',
+  alt: '縦向きの写真（歴史スライドの挿絵）',
         position: 'bottom',
       },
       /*
