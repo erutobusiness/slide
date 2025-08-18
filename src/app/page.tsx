@@ -1,20 +1,10 @@
 import Link from 'next/link';
+import { listPresentations } from '@/hooks/usePresentations';
 import styles from './page.module.css';
 
-const presentations = [
-  {
-    id: 'declarative_ui',
-    title: 'Declarative UI',
-    description: 'モダンなUIフレームワークにおける宣言的UI設計について',
-  },
-  {
-    id: 'theArtOfLoving',
-    title: 'The Art of Loving',
-    description: '愛の技術に関するプレゼンテーション',
-  },
-];
+export default async function Home() {
+  const presentations = await listPresentations();
 
-export default function Home() {
   return (
     <div className={styles.container}>
       <main className={styles.main}>
