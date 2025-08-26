@@ -1,6 +1,6 @@
 import Link from 'next/link';
-import { listPresentations } from '@/hooks/usePresentations';
 import styles from './page.module.css';
+import { listPresentations } from '@/utils/listPresentations';
 
 export default async function Home() {
   const presentations = await listPresentations();

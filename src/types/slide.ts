@@ -45,12 +45,12 @@ export interface Slide {
   codeExamples?: SlideCode[];
   /** Layout for multiple code examples: 'vertical' (stacked) or 'horizontal' (side-by-side) */
   codeLayout?: 'vertical' | 'horizontal';
+  /** Optional tweet URL to embed in the slide (client-side embed) */
+  tweetUrl?: string;
   // grouped list / bullet groups (used by quiz and explanation slides)
   list?: SlideList;
   slideAnimations?: SlideAnimations;
   backgroundAnimation?: BackgroundAnimation;
-  // arbitrary metadata to allow gradual schema additions without breaking
-  meta?: Record<string, unknown>;
 }
 
 export interface SlideSection {
@@ -65,4 +65,10 @@ export interface Presentation {
   title: string;
   description: string;
   sections: SlideSection[];
+}
+
+// スライド一覧ページのデータ
+export interface SlidesPageData {
+  title: string;
+  description: string;
 }

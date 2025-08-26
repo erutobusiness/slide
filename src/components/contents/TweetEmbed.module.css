@@ -1,0 +1,5 @@
+.container {
+  margin: 1rem 0;
+  display: grid;
+  place-items: center;
+}

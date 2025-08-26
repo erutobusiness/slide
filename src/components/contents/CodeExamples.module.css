@@ -1,0 +1,41 @@
+.codeExamples {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.codeExamplesHorizontal {
+  flex-direction: row;
+  align-items: stretch;
+}
+
+.codeExamplesHorizontal .codeBlock {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+.codeBlock {
+  background-color: #1a1a1a;
+  border-radius: 0.5rem;
+  padding: 1rem;
+}
+
+.codeTitle {
+  color: white;
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.filename {
+  color: #9ca3af;
+  font-size: 0.875rem;
+  margin-bottom: 0.5rem;
+}
+
+.codeContent {
+  color: #10b981;
+  font-size: 0.875rem;
+  overflow-x: auto;
+  font-family: "Courier New", monospace;
+}

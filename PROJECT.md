@@ -20,7 +20,7 @@
 ### 1.3. 各種構造
 
 - **URL構造**: `src/app/[presentationId]/[sectionId]`
-  - `[presentationId]`: プレゼンテーション全体のまとまり (例: `declarative_ui`)
+  - `[presentationId]`: プレゼンテーション全体のまとまり (例: `declarativeUI`)
   - `[sectionId]`: 個別のスライド番号や章 (例: `01_intro`)
 - **画面構造**:
   - プレゼンテーション一覧: `src/app/page.tsx`

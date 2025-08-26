@@ -1,4 +1,4 @@
-import type { SlideSection } from '@/types/slide';
+import type { SlideSection, SlidesPageData } from '@/types/slide';
 
 import introSection from './01-intro';
 import whyNowSection from './02-why_now';
@@ -18,19 +18,8 @@ export const slideSections: SlideSection[] = [
   humanitiesSection,
 ];
 
-export function getSlideSection(id: string): SlideSection | undefined {
-  return slideSections.find((section) => section.id === id);
-}
-
-export function getAllSlideSections(): SlideSection[] {
-  return slideSections;
-}
-
-export const slidesPageData = {
+export const slidesPageData: SlidesPageData = {
   title: '宣言的な世界',
   description: '宣言的UIを端に、歴史やクイズを通して、モダン開発のパラダイムを理解する',
 };
 
-export function getSlidesPageData() {
-  return slidesPageData;
-}

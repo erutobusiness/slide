@@ -26,11 +26,7 @@ export const introSection: SlideSection = {
         '命令的：マニュアル車の運転のように、ギアの切り替えやクラッチ操作など、すべての手順を自分で制御する必要がある',
         '宣言的：オートマ車の運転のように、「前に進む」「止まる」といった目的を伝えるだけで、内部の操作は車が自動で行う',
       ],
-      image: {
-        url: '/declarative/DeclartiveVsImperative.png',
-        alt: '宣言的と命令的プログラミングの対比を示す図（車の比喩）',
-        position: 'bottom',
-      },
+      tweetUrl: 'https://x.com/gethackteam/status/1268892357027663873',
     },
     {
       id: '01-intro-code',

@@ -1,10 +1,10 @@
-import type { SlideSection } from '@/types/slide';
+import type { SlideSection, SlidesPageData } from '@/types/slide';
 
 // Intro section and a minimal slide so the presentation is discoverable
 export const introSection: SlideSection = {
   id: '01-intro',
-  title: '愛の技術（イントロ）',
-  description: '愛と関係についてのイントロダクション',
+  title: 'なぜ愛は技術なのか？',
+  description: '愛の４要素を紹介し、愛を技術として捉える視点を提供する',
   slides: [
     {
       id: '01-intro-1',
@@ -16,12 +16,7 @@ export const introSection: SlideSection = {
 
 export const slideSections: SlideSection[] = [introSection];
 
-export const slidesPageData = {
+export const slidesPageData: SlidesPageData = {
   title: 'The Art of Loving',
-  description:
-    'エーリヒ・フロムの「愛するということ」を読んだので、愛がなぜ技術なのかを紹介します。',
+  description: 'エーリヒ・フロム「愛するということ」を読んだので、愛を与えます！',
 };
-
-export function getSlidesPageData() {
-  return slidesPageData;
-}

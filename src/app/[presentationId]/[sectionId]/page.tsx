@@ -8,14 +8,17 @@ import { SlideComponent } from '@/components/SlideComponent';
 import { useAsyncData } from '@/hooks/useAsyncData';
 import { useSlidePresentation } from '@/hooks/useSlidePresentation';
 import type { SlideSection } from '@/types/slide';
-import styles from './page.module.css';
+import styles from './section.module.css';
 
 async function getSlideData(presentationId: string): Promise<SlideSection[]> {
-  if (presentationId === 'declarative_ui') {
-    const { getAllSlideSections } = await import('@/data/declarative_ui');
-    return getAllSlideSections();
+  try {
+    const { slideSections } = await import(`@/data/${presentationId}`);
+    return slideSections satisfies SlideSection[];
   }
-  return [];
+  catch (error) {
+    console.error('Error loading slide data:', error);
+    return [];
+  }
 }
 
 export default function SlidePage() {
