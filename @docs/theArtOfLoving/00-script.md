@@ -11,8 +11,18 @@
 <!-- フック：愛に関すること -->
 <!-- いけないボーダーライン「愛することで生まれ変わる」 -->
 
+<!-- フック：ビジネス -->
+<!-- 経験学習サイクル -->
+
+<!-- フック：開発生産性 -->
+<!-- MicrosoftのSPACEフレームワーク調査 -->
+<!-- Googleのプロジェクトアリストテレス -->
+
 <!-- 読み方： -->
 <!-- 社會部部長みたいに読む -->
+
+<!-- 注意点： -->
+<!-- エンジニア視点に偏っていること（転じてマネージャーとかにも使えるかもだが・・） -->
 
 ## 01 愛とは技術である
 
@@ -58,7 +68,7 @@
 しかし、「協働する力」と言われても、なんだか漠然として掴みどころがありません。
 どうすれば、これを体系的に学ぶ方法はあるのでしょうか？
 
-[^1]:  Houck, B., Lowdermilk, T., Beyer, C., Clarke, S., & Hanrahan, B. (2025). The SPACE of AI: Real-World Lessons on AI's Impact on Developers. arXiv preprint arXiv:2508.00178.
+[^1]:  [Houck, B., Lowdermilk, T., Beyer, C., Clarke, S., & Hanrahan, B. (2025). The SPACE of AI: Real-World Lessons on AI's Impact on Developers. arXiv preprint arXiv:2508.00178.](https://arxiv.org/abs/2508.00178)
 
 <!-- 断定する表現は避ける -->
 
@@ -163,13 +173,16 @@
 
 ## 02 愛の4要素の紹介
 
-愛は4つの要素が揃って初めて成立します。
+本書によれば、愛は4つの要素が揃って初めて成立します。
 それは、配慮、責任、尊重、知です。
 
+これらは独立したスキルではなく、互いに支え合う関係にあります。
 それぞれの要素について、私たちがつい陥りがちな「アンチパターン」と、そこから抜け出すための小さな一歩を考えてみましょう。
 
 <!-- 訳語メモ：紀伊國屋書店版では「尊重」表記なので、それを踏襲する -->
 <!-- 他版では「Respect」「尊敬」とも表記されている -->
+
+<!-- 余談：この4つの単語で説明する感じ、ギリシア哲学から来ていそう -->
 
 ### 02-01 配慮（Care）
 
@@ -194,7 +207,10 @@
 「今さえ乗り切れば」という発想で、ドキュメント化を後回しにしたり、誰かに負荷が偏っていることに気づかなかったり。
 私自身、プロジェクトの佳境では、こういう状態に陥ることがあります。
 でも、週に15分だけでもドキュメントを書く時間を作ったり、チームメンバーの表情を意識的に見るようにしたり。
+実際、Spotifyでは新人エンジニアの成長を「Time-to-10th PR」という指標で測定し、チーム環境の改善に活用しています[^Spotify_Time-to-10th]。
 小さな一歩から、配慮は始められるのかもしれません。
+
+[^Spotify_Time-to-10th]: [6 Common Productivity Habits: Netflix, Google, Spotify - CTO Fraction](https://ctofraction.com/blog/6-productivity-habits-netflix-google-spotify/)
 
 ### 02-02 責任（Responsibility）
 
@@ -227,7 +243,11 @@
 
 まずは「いつまでに見ます」と期限を明確にすることから。
 そして、レビュー前に「何を重点的に見てほしいですか？」と聞くことから。
+Googleのコードレビューガイドでも、レビュアーの責任として「開発者の進捗を妨げず、かつコード品質を維持する」バランスが重要だと述べています[^Google_Code_Review]。
 こうした小さな変化が、責任ある行動につながっていくと思います。
+
+<!-- [^Google_Code_Review]: [Google's Engineering Practices Documentation: Code Review](https://google.github.io/eng-practices/review/reviewer/) -->
+[^Google_Code_Review]: [The Standard of Code Review | eng-practices](https://google.github.io/eng-practices/review/reviewer/standard.html)
 
 ### 02-03 尊重（Respect）
 
@@ -260,7 +280,10 @@
 私も、つい「こうした方が早い」と手を出してしまうことがあります。
 
 でも、「こういう選択肢もありますが、どう思いますか？」と問いかけるだけで、相手の自律性を保てます。
+Netflixが掲げる「Context not Control」という原則のように、指示ではなく判断材料を提供することで、相手の成長を促すことができます[^Netflix_Context_not_Control]。
 一歩引いて、相手の判断を待つ。それも技術なのだと思います。
+
+[^Netflix_Context_not_Control]: [Netflix Culture Memo - Careers at Netflix](https://jobs.netflix.com/culture)
 
 ### 02-04 知（Knowledge）
 
@@ -292,7 +315,11 @@
 
 まずは「なぜこうなっているのか」を聞くことから。
 設計ドキュメントやチケットの履歴を5分だけでも読むことから。
+Netflixの「farming for dissent」のように、意図的に異なる意見や背景を探ることで、より深い理解につながります[^Netflix_Farming_for_Dissent]。
+Googleのプロジェクトアリストテレス
 知ろうとする姿勢が、より良い協働への第一歩になるはずです。
+
+[^Netflix_Farming_for_Dissent]: [Netflix Culture Memo - Careers at Netflix](https://jobs.netflix.com/culture)
 
 ### 02-05 愛の4要素のまとめ
 
