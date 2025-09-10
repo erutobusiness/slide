@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import styles from './presentation.module.css';
 import { loadPresentation } from '@/utils/loadPresentation';
+import { listPresentations } from '@/utils/listPresentations';
 
 // presentation metadata is provided from `src/data/<presentationId>/index.ts`
 // do not define presentation data inline here; the page will dynamically import it.
@@ -39,4 +40,10 @@ export default async function PresentationPage({
       </main>
     </div>
   );
+}
+
+// For `output: 'export'` we must provide all dynamic route params at build-time.
+export async function generateStaticParams() {
+  const list = await listPresentations();
+  return list.map((p) => ({ presentationId: p.id }));
 }

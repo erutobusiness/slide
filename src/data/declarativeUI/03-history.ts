@@ -74,7 +74,6 @@ export const historySection: SlideSection = {
       image: {
         url: '/declarative/PXL_20250430_135602763.PORTRAIT.ORIGINAL.jpg',
         alt: '縦向きの写真（歴史スライドの挿絵）',
-        position: 'bottom',
       },
     },
   ],

@@ -147,7 +147,6 @@ END-PERFORM.`,
       image: {
         url: '/declarative/PXL_20250426_075656039.PORTRAIT.ORIGINAL.jpg',
         alt: 'スマートフォンで撮影された縦向きの写真（宣言的UIに関するスライド用）',
-        position: 'bottom',
       },
     },
   ],

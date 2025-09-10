@@ -16,7 +16,6 @@ export const introSection: SlideSection = {
       image: {
         url: '/declarative/宣言的UI.png',
         alt: '「宣言的UI」の概念を示す図（日本語の見出し付き）',
-        position: 'bottom',
       },
     },
     {

@@ -1,3 +1,23 @@
+import { listPresentations } from '@/utils/listPresentations';
+import { loadPresentation } from '@/utils/loadPresentation';
+
+// For `output: 'export'` we must provide all dynamic route params at build-time.
+export async function generateStaticParams() {
+  const presentations = await listPresentations();
+  const allParams = await Promise.all(
+    presentations.map(async (p) => {
+      const presentation = await loadPresentation(p.id);
+      if (!presentation) return [];
+      return presentation.sections.map((section) => ({
+        presentationId: p.id,
+        sectionId: section.id,
+      }));
+    }),
+  );
+
+  return allParams.flat();
+}
+
 'use client';
 
 import { useParams } from 'next/navigation';
