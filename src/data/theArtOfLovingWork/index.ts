@@ -1,22 +1,18 @@
 import type { SlideSection, SlidesPageData } from '@/types/slide';
 
-// Intro section and a minimal slide so the presentation is discoverable
-export const introSection: SlideSection = {
-  id: '01-intro',
-  title: 'なぜ愛は技術なのか？',
-  description: '愛の４要素を紹介し、愛を技術として捉える視点を提供する',
-  slides: [
-    {
-      id: '01-intro-1',
-      title: '愛とは何か',
-      descriptions: ['愛の多面的な定義を概観します。'],
-    },
-  ],
-};
+import loveIsAnArtSection from './01-love_is_an_art';
+import fourElementsOfLoveSection from './02-four_elements_of_love';
+import loveIsGivingSection from './03-love_is_giving';
+import summarySection from './04-summary';
 
-export const slideSections: SlideSection[] = [introSection];
+export const slideSections: SlideSection[] = [
+  loveIsAnArtSection,
+  fourElementsOfLoveSection,
+  loveIsGivingSection,
+  summarySection,
+];
 
 export const slidesPageData: SlidesPageData = {
-  title: 'The Art of Loving',
-  description: 'エーリヒ・フロム「愛するということ」を読んだので、愛を与えます！',
+  title: '愛のある仕事',
+  description: 'エーリヒ・フロムの「愛するということ」を参考に、エンジニアリングにおける協働の技術を考える',
 };

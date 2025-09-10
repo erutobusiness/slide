@@ -10,11 +10,6 @@
   z-index: 2;
 }
 
-.slideContent {
-  max-width: 64rem;
-  width: 100%;
-}
-
 .slideTitle {
   font-size: 2.25rem;
   font-weight: bold;
@@ -36,12 +31,79 @@
   margin-bottom: 2rem;
   display: flex;
   justify-content: center;
+  position: relative;
+  width: 100%;
+  height: 50vh;
 }
 
 .slideImage {
-  max-width: 100%;
-  height: auto;
   border-radius: 0.5rem;
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.subSectionsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 800px;
+  margin-bottom: 2rem;
+}
+
+.subSection {
+  border: 1px solid #eee;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  background-color: #f9f9f9;
+}
+
+.subSectionTitle {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.subSectionDescriptions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.subSectionDescription {
+  font-size: 1rem;
+  text-align: center;
+}
+
+.listContainer {
+  width: 100%;
+  max-width: 800px;
+  margin-bottom: 2rem;
+}
+
+.listGroup {
+  margin-bottom: 1.5rem;
+}
+
+.listGroupTitle {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.listPoints {
+  list-style-position: inside;
+  text-align: left;
+  display: inline-block;
+}
+
+.listPoint {
+  font-size: 1.125rem;
+  margin-bottom: 0.5rem;
 }
 

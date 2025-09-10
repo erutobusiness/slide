@@ -1,7 +1,6 @@
 export interface SlideImage {
   url: string;
   alt: string;
-  position: 'top' | 'bottom' | 'left' | 'right' | 'background';
   lazy?: boolean;
 }
 
@@ -37,6 +36,11 @@ export interface BackgroundAnimation {
   type: 'wave' | 'heart' | 'boom';
 }
 
+export interface SlideSubSection {
+  title: string;
+  descriptions: string[];
+}
+
 export interface Slide {
   id: string;
   title: string;
@@ -51,6 +55,8 @@ export interface Slide {
   list?: SlideList;
   slideAnimations?: SlideAnimations;
   backgroundAnimation?: BackgroundAnimation;
+  notes?: string;
+  subSections?: SlideSubSection[];
 }
 
 export interface SlideSection {

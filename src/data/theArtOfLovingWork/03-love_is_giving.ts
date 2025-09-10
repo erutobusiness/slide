@@ -1,0 +1,30 @@
+import type { SlideSection } from '@/types/slide';
+
+export const loveIsGivingSection: SlideSection = {
+  id: '03-love_is_giving',
+  title: '03 愛は与えること',
+  description: '愛における「与えること」の本当の意味についての解説',
+  slides: [
+    {
+      id: '03-01',
+      title: '03-01 愛することは与えること',
+      descriptions: [
+        'フロム曰く、愛することは「与えること」である',
+        'しかし、それは自己犠牲ではない。与えることは、自分のもてる力の表現である',
+        '与えるという行為は、自分の豊かさや能力を再確認する機会であり、最も高度な自己実現と言える',
+        '与える人は、他人さえも「与える人」にする',
+      ],
+    },
+    {
+      id: '03-02',
+      title: '03-02 私にとっての「与えること」',
+      descriptions: [
+        'この勉強会は、まさに私にとって「与えること」を実践する場である',
+        'このような機会を与えてくださった方々への感謝',
+        '私も皆さんから学び、そして皆さんに与えられる存在になれるよう、成長を続けていきたい',
+      ],
+    },
+  ],
+};
+
+export default loveIsGivingSection;
