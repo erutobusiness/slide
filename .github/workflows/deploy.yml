@@ -25,22 +25,6 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Export static files
-        run: npx next export -o out
-
-      - name: Wrap export into /slide for GitHub Pages
-        run: |
-          # Move exported files into out/slide so the site is served at /<repo>/
-          if [ -d out ]; then
-            tmpdir=$(mktemp -d)
-            # move everything from out to tmpdir
-            shopt -s dotglob || true
-            mv out/* "$tmpdir" || true
-            mkdir -p out/slide
-            mv "$tmpdir"/* out/slide/ || true
-            rm -rf "$tmpdir"
-          fi
-
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:

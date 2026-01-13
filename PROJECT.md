@@ -34,8 +34,9 @@
     - 各セクション・各スライドの情報を取得する
   - スライドデータ: `src/data/{presentationId}/{sectionId}/{slideId}.ts`
     - スライドの内容（テキスト、画像パス等）を、スライドごとにファイルを分けて定義する
-  - 原稿データ: `src/data/{presentationId}/{sectionId}/00_script.md`
-    - スライドの原稿を、セクションごとにファイルを分けて定義する
+  - 原稿データ: `erutobusiness/docs` (GitHub)
+    - 原稿の執筆・校正は外部リポジトリで行い、本アプリでは成果物（TypeScriptデータ）のみを取り扱う
+    - 必要に応じて GitHub MCP 経由で参照する
 
 ### 1.4. コンポーネント設計
 
