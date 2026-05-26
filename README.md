@@ -1,36 +1,21 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# slide — Archived
 
-## Getting Started
+> [!IMPORTANT]
+> このリポジトリは **`erutobusiness/presentations`** に統合され、archive されました（2026-05）。
+> Next.js + React 19 のカスタムスライドフレーム部分と、同梱されていた `declarativeUI` / `theArtOfLovingWork` のプレゼンデータは [`presentations/tech/next-custom/`](https://github.com/erutobusiness/presentations/tree/master/tech/next-custom) に移管済み。
 
-First, run the development server:
+## 後継リポジトリ
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **presentations**: https://github.com/erutobusiness/presentations
+  - `tech/next-custom/` — 旧 slide リポ本体（src/ public/ next.config.ts 等）
+  - `slides/` — 各プレゼン（Marp / Remotion @player / Next.js）
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+移行詳細は presentations 側の以下を参照:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- `design/migration-plan.md` Phase M3
+- `knowledge/slide-absorption-notes.md` — 吸収時のアーキ差分・除外項目・残 TODO
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 旧 README
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+これは [Next.js](https://nextjs.org) プロジェクト ([`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app) で生成) でした。
+GitHub Pages の `/slide/` パスにデプロイされていたため `next.config.ts` で `basePath: '/slide'` を指定していました（presentations 移管時に削除）。
